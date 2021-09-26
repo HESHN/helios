@@ -11,7 +11,9 @@ export default function PostComponent({ post }) {
   return (
     <div>
       <h1>{post.title}</h1>
-      <Markdown children={post.content} />
+      <Markdown>
+      {post.content}
+      </Markdown>
     </div>
   )
 }

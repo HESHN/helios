@@ -19,7 +19,7 @@ export default function Home() {
       <h1>Posts</h1>
       {
         posts.map(post => (
-          <Link href={`/posts/${post.id}`}>
+          <Link href={`/posts/${post.id}`} key={post.id}>
             <a>
               <h2>{post.title}</h2>
             </a>
