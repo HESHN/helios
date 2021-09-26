@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-helios-staging-162901-authRole",
+      "UnauthRoleArn": "arn:aws:iam::761698664872:role/amplify-helios-staging-162901-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::761698664872:role/amplify-helios-staging-162901-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-helios-staging-162901-deployment",
+      "UnauthRoleName": "amplify-helios-staging-162901-unauthRole",
+      "StackName": "amplify-helios-staging-162901",
+      "StackId": "arn:aws:cloudformation:us-east-2:761698664872:stack/amplify-helios-staging-162901/dbcc3f70-1ee6-11ec-8ab5-063ab6d9e78a",
+      "AmplifyAppId": "d3p5ril1h830rv"
+    }
+  }
+}
