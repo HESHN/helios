@@ -18,7 +18,7 @@ export default function PostComponent({ post }) {
   )
 }
 
-export async function getStaticPaths(req) {
+export async function paths(req) {
   const { DataStore } = withSSRContext(req)
   const posts = await DataStore.query(Post)
   const paths = posts.map(post => ({ params: { id: post.id }}))
@@ -28,7 +28,7 @@ export async function getStaticPaths(req) {
   }
 }
 
-export async function getStaticProps (req) {
+export async function getServerSideProps (req) {
   const { DataStore } = withSSRContext(req)
   const { params } = req
   const { id } = params
@@ -38,6 +38,6 @@ export async function getStaticProps (req) {
     props: {
       post: JSON.parse(JSON.stringify(post))
     },
-    revalidate: 1
+    // revalidate: 1
   }
 }
