@@ -10,6 +10,11 @@
       "StackName": "amplify-helios-staging-162901",
       "StackId": "arn:aws:cloudformation:us-east-2:761698664872:stack/amplify-helios-staging-162901/dbcc3f70-1ee6-11ec-8ab5-063ab6d9e78a",
       "AmplifyAppId": "d3p5ril1h830rv"
+    },
+    "categories": {
+      "auth": {
+        "helios9af492e2": {}
+      }
     }
   }
 }
