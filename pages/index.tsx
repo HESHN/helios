@@ -7,7 +7,7 @@ import { Movie } from '../src/models'
 
 import * as React from 'react';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-import { MovieAddSharp } from '@mui/icons-material'
+import { PostAddSharp } from '@mui/icons-material'
 
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 90 },
