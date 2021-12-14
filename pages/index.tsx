@@ -2,12 +2,12 @@ import styles from '../styles/Home.module.css'
 import { DataStore } from 'aws-amplify'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Post } from '../src/models'
+import { Movie } from '../src/models'
 
 
 import * as React from 'react';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-import { PostAddSharp } from '@mui/icons-material'
+import { MovieAddSharp } from '@mui/icons-material'
 
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 90 },
@@ -49,10 +49,10 @@ const getRows = () => {
   useEffect(() => {
     fetchMovie()
     async function fetchMovie() {
-      const postData = await DataStore.query(Post)
-      setMovie(postData)
+      const MovieData = await DataStore.query(Movie)
+      setMovie(MovieData)
     }
-    DataStore.observe(Post).subscribe(() => fetchMovie())
+    DataStore.observe(Movie).subscribe(() => fetchMovie())
   }, [])
 
 }
@@ -73,18 +73,18 @@ export default function DataGridDemo() {
   useEffect(() => {
     fetchMovie()
     async function fetchMovie() {
-      const postData = await DataStore.query(Post)
-      setMovie(postData)
+      const MovieData = await DataStore.query(Movie)
+      setMovie(MovieData)
     }
-    DataStore.observe(Post).subscribe(() => fetchMovie())
+    DataStore.observe(Movie).subscribe(() => fetchMovie())
   }, [])
 
   return (
     <div className={styles.grid}>
-    {Movie?.map((post) => {
+    {Movie?.map((Movie) => {
       return (
         <a href="#" className={styles.card}>
-          <h3>{post.title}</h3>
+          <h3>{Movie.title}</h3>
         </a>
       )
     })}

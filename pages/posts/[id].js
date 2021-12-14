@@ -1,25 +1,25 @@
 import { withSSRContext } from 'aws-amplify'
-import { Post } from '../../src/models'
+import { Movie } from '../../src/models'
 import Markdown from 'react-markdown'
 import { useRouter } from 'next/router'
 
-export default function PostComponent({ post }) {
+export default function MovieComponent({ Movie }) {
   const router = useRouter()
   if (router.isFallback) {
     return <div>Loading...</div>
   }
   return (
     <div>
-      <h1>{post.title}</h1>
-      <Markdown children={post.content} />
+      <h1>{Movie.title}</h1>
+      <Markdown children={Movie.content} />
     </div>
   )
 }
 
 export async function getStaticPaths(req) {
   const { DataStore } = withSSRContext(req)
-  const posts = await DataStore.query(Post)
-  const paths = posts.map(post => ({ params: { id: post.id }}))
+  const Movies = await DataStore.query(Movie)
+  const paths = Movies.map(Movie => ({ params: { id: Movie.id }}))
   return {
     paths,
     fallback: true,
@@ -30,11 +30,11 @@ export async function getStaticProps (req) {
   const { DataStore } = withSSRContext(req)
   const { params } = req
   const { id } = params
-  const post = await DataStore.query(Post, id)
+  const Movie = await DataStore.query(Movie, id)
 
   return {
     props: {
-      post: JSON.parse(JSON.stringify(post))
+      Movie: JSON.parse(JSON.stringify(Movie))
     },
     revalidate: 1
   }
