@@ -4,16 +4,17 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 
 
-type PostMetaData = {
+type MovieMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-export declare class Post {
+export declare class Movie {
   readonly id: string;
-  readonly title?: string;
-  readonly content?: string;
+  readonly description?: string;
+  readonly thumbnail?: string;
+  readonly releasedDate?: string;
   readonly createdAt?: string;
   readonly updatedAt?: string;
-  constructor(init: ModelInit<Post, PostMetaData>);
-  static copyOf(source: Post, mutator: (draft: MutableModel<Post, PostMetaData>) => MutableModel<Post, PostMetaData> | void): Post;
+  constructor(init: ModelInit<Movie, MovieMetaData>);
+  static copyOf(source: Movie, mutator: (draft: MutableModel<Movie, MovieMetaData>) => MutableModel<Movie, MovieMetaData> | void): Movie;
 }

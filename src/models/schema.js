@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "Post": {
-            "name": "Post",
+        "Movie": {
+            "name": "Movie",
             "fields": {
                 "id": {
                     "name": "id",
@@ -10,17 +10,24 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "title": {
-                    "name": "title",
+                "description": {
+                    "name": "description",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "content": {
-                    "name": "content",
+                "thumbnail": {
+                    "name": "thumbnail",
                     "isArray": false,
                     "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "releasedDate": {
+                    "name": "releasedDate",
+                    "isArray": false,
+                    "type": "AWSDate",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -42,7 +49,7 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "Posts",
+            "pluralName": "Movies",
             "attributes": [
                 {
                     "type": "model",
@@ -69,5 +76,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "ef9b651791d1d68ed7fe60bc76c24b25"
+    "version": "edfa70678843d654d42a08b520835b9a"
 };

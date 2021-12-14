@@ -1,5 +1,7 @@
-type Post @model @auth(rules: [{allow: public}]) {
+type Movie @model @auth(rules: [{allow: public}]) {
   id: ID!
-  title: String
-  content: String
+  description: String
+  thumbnail: String
+  releasedDate: AWSDate
 }
+ 

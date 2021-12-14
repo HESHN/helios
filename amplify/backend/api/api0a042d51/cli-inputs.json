@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "paths": {
+    "/movies": {
+      "name": "/movies",
+      "lambdaFunction": "helios22cbf76a",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}
